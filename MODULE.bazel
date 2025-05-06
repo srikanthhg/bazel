@@ -3,6 +3,22 @@ module(
     version = "0.0.1",
 )
 
+
+bazel_dep(name = "rules_java", version = "7.6.0")  # version known to work
+bazel_dep(name = "rules_jvm_external", version = "5.3")
+
+# Register JDK 17 toolchain
+java = use_extension("@rules_java//java:extensions.bzl", "java")
+java.toolchain(
+    name = "remotejdk17",
+    java_version = "17",
+)
+use_repo(java, "remotejdk17")
+
+
+
+
+
 # Add rules_jvm_external for managing Maven dependencies
 bazel_dep(name = "rules_jvm_external", version = "6.3")
 
