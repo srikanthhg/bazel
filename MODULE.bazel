@@ -1,6 +1,7 @@
 module(
     name = "fleetman-api-gateway",
     version = "0.0.1",
+    compatability_level = 1,
 )
 
 
