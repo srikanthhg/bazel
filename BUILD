@@ -1,8 +1,8 @@
-java_toolchain(
-    name = "fleetman_api_gateway_toolchain",
-    source_version = "17",
-    target_version = "17",
-)
+# java_toolchain(
+#     name = "fleetman_api_gateway_toolchain",
+#     source_version = "17",
+#     target_version = "17",
+# )
 
 java_binary(
     name = "fleetman-api-gateway",
