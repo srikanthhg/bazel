@@ -1,16 +1,8 @@
-java_toolchain(
-    name = "java17_toolchain",
-    source_version = "17",
-    target_version = "17",
-    bootclasspath = [],
-)
-
 java_binary(
     name = "fleetman-api-gateway",
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
     main_class = "com.virtualpairprogrammers.api.FleetmanApiGateway",
     deps = [":fleetman_lib"],
-    toolchains = [":java17_toolchain"],  # Corrected attribute
 )
 
 java_library(
@@ -22,7 +14,6 @@ java_library(
         "@maven//:javax_xml_bind_jaxb_api",
     ],
     resources = glob(["src/main/resources/**"]),
-    toolchains = [":java17_toolchain"],  # Corrected attribute
 )
 
 java_test(
