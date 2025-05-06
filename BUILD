@@ -1,4 +1,4 @@
-load("@rules_java//java:java_library.bzl", "java_library")
+# load("@rules_java//java:java_library.bzl", "java_library")
 
 java_binary(
     name = "fleetman-api-gateway",
