@@ -10,7 +10,7 @@ bazel_dep(name = "rules_java", version = "7.6.0")  # version known to work
 
 # Register JDK 17 toolchain
 java = use_extension("@rules_java//java:extensions.bzl", "java")
-java.toolchain(
+java.register_toolchains(
     name = "remotejdk17",
     java_version = "17",
 )
