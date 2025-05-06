@@ -3,6 +3,12 @@ java_binary(
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
     main_class = "com.virtualpairprogrammers.api.FleetmanApiGateway",
     deps = [":fleetman_lib"],
+    javacopts = [
+        "-source",
+        "17",
+        "-target",
+        "17",
+    ],
 )
 
 java_library(
