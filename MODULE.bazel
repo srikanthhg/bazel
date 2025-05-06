@@ -12,8 +12,7 @@ maven.install(
         "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
         "org.springframework.boot:spring-boot-starter:3.0.1",  # Spring Boot Starter
         "org.springframework.boot:spring-boot-autoconfigure:3.0.1",  # Spring Boot Autoconfigure
-        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.4",  # OpenFeign
-        "org.springframework.cloud:spring-cloud-starter:2022.0.4",  # Spring Cloud Starter
+        "org.springframework.cloud:spring-cloud-starter-openfeign",  # OpenFeign
         "javax.xml.bind:jaxb-api:2.0",  # JAXB API
         "org.springframework:spring-context:5.3.20",  # Spring Context
         "org.springframework:spring-beans:5.3.20",  # Spring Beans
@@ -28,6 +27,10 @@ maven.install(
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
+    # Add the Spring Cloud BOM for dependency alignment
+    override_targets = {
+        "org.springframework.cloud:spring-cloud-dependencies": "2022.0.4",
+    },
     strict_visibility = True,
 )
 
