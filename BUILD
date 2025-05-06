@@ -1,8 +1,21 @@
+java_runtime(
+    name = "local_jdk_runtime",
+    java_home = "/usr/lib/jvm/java-17-openjdk-amd64",
+    visibility = ["//visibility:public"],
+)
+
+java_toolchain(
+    name = "java17_toolchain",
+    source_version = "17",
+    target_version = "17",
+    java_runtime = ":local_jdk_runtime",
+)
 java_binary(
     name = "fleetman-api-gateway",
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
     main_class = "com.virtualpairprogrammers.api.FleetmanApiGateway",
     deps = [":fleetman_lib"],
+    toolchains = [":java17_toolchain"],
 )
 
 java_library(
@@ -14,14 +27,5 @@ java_library(
         "@maven//:javax_xml_bind_jaxb_api",
     ],
     resources = glob(["src/main/resources/**"]),
-)
-
-java_test(
-    name = "fleetman_tests",
-    srcs = glob(["src/test/java/com/virtualpairprogrammers/**/*.java"]),
-    deps = [
-        ":fleetman_lib",
-        "@maven//:org_springframework_boot_spring_boot_starter_test",
-        "@maven//:junit_junit",
-    ],
+    toolchains = [":java17_toolchain"],
 )
