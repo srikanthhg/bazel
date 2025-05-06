@@ -3,18 +3,15 @@ module(
     version = "0.0.1",
 )
 
-# bazel_dep(name = "rules_java", version = "8.11.0")
-# maven = use_extension("//java:extensions.bzl", "maven")
-
 # Add rules_jvm_external for managing Maven dependencies
-
 bazel_dep(name = "rules_jvm_external", version = "6.3")
+
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
         "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
         "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test (test scope)
-        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",  # OpenFeign (aligned with Spring Boot 3.0.1)
+        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.0",  # OpenFeign (aligned with Spring Boot 3.0.1)
         "javax.xml.bind:jaxb-api:2.3.1",  # JAXB API
         "junit:junit:4.11",  # JUnit (test scope)
     ],
