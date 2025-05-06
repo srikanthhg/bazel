@@ -11,7 +11,7 @@ maven.install(
     artifacts = [
         "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
         "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test (test scope)
-        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.0",  # OpenFeign
+        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",  # OpenFeign
         "javax.xml.bind:jaxb-api:2.3.1",  # JAXB API
         "junit:junit:4.11",  # JUnit (test scope)
     ],
