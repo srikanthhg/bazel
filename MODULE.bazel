@@ -1,0 +1,23 @@
+module(
+    name = "fleetman-api-gateway",
+    version = "0.0.1",
+    description = "Fleetman API Gateway Module",
+)
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.install(
+    artifacts = [
+        "org.springframework.boot:spring-boot-starter-web:3.0.1",
+        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.0",
+        "javax.xml.bind:jaxb-api:2.3.1",
+        "org.springframework.boot:spring-boot-starter-test:3.0.1",
+        "junit:junit:4.11",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+    strict_visibility = True,
+)
+
+use_repo(maven, "maven")
