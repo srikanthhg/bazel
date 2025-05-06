@@ -2,8 +2,8 @@ java_toolchain(
     name = "fleetman_api_gateway_toolchain",
     source_version = "17",
     target_version = "17",
-
 )
+
 java_binary(
     name = "fleetman-api-gateway",
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
@@ -16,24 +16,15 @@ java_library(
     srcs = glob(["src/main/java/com/virtualpairprogrammers/**/*.java"]),
     deps = [
         "@maven//:org_springframework_boot_spring_boot_starter_web",
-        "@maven//:org_springframework_boot_spring_boot_starter",
-        "@maven//:org_springframework_boot_spring_boot_autoconfigure",
         "@maven//:org_springframework_cloud_spring_cloud_starter_openfeign",
         "@maven//:javax_xml_bind_jaxb_api",
-        "@maven//:org_springframework_spring_context",
-        "@maven//:org_springframework_spring_beans",
-        "@maven//:org_springframework_spring_web",
-        "@maven//:com_fasterxml_jackson_core_jackson_databind",
-        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
-        "@maven//:org_slf4j_slf4j_api",
-        "@maven//:org_slf4j_slf4j_simple",
     ],
     resources = glob(["src/main/resources/**"]),
 )
 
 java_test(
     name = "fleetman_tests",
-    srcs = glob(["src/test/java/com/virtualpairprogrammers/*.java"]),
+    srcs = glob(["src/test/java/com/virtualpairprogrammers/**/*.java"]),
     deps = [
         ":fleetman_lib",
         "@maven//:org_springframework_boot_spring_boot_starter_test",

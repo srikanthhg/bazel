@@ -4,26 +4,16 @@ module(
 )
 
 # Add rules_jvm_external for managing Maven dependencies
-bazel_dep(name = "rules_jvm_external", version = "6.2")
-# bazel_dep(name = "rules_java", version = "8.11.0")
-maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+bazel_dep(name = "rules_jvm_external", version = "6.3")
 
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
         "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
-        "org.springframework.boot:spring-boot-starter:3.0.1",  # Spring Boot Starter
-        "org.springframework.boot:spring-boot-autoconfigure:3.0.1",  # Spring Boot Autoconfigure
-        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.4",  # OpenFeign (aligned with Spring Boot 3.0.1)
-        "javax.xml.bind:jaxb-api:2.0",  # JAXB API
-        "org.springframework:spring-context:5.3.20",  # Spring Context
-        "org.springframework:spring-beans:5.3.20",  # Spring Beans
-        "org.springframework:spring-web:5.3.20",  # Spring Web
-        "com.fasterxml.jackson.core:jackson-databind:2.14.0",  # Jackson Databind
-        "com.fasterxml.jackson.core:jackson-annotations:2.14.0",  # Jackson Annotations
-        "org.slf4j:slf4j-api:1.7.36",  # SLF4J API (aligned with Maven resolution)
-        "org.slf4j:slf4j-simple:1.7.36",  # SLF4J Simple (aligned with Maven resolution)
-        "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test
-        "junit:junit:4.13.2",  # JUnit
+        "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test (test scope)
+        "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.0",  # OpenFeign
+        "javax.xml.bind:jaxb-api:2.3.1",  # JAXB API
+        "junit:junit:4.11",  # JUnit (test scope)
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
