@@ -1,5 +1,3 @@
-# load("@rules_java//java:java_library.bzl", "java_library")
-
 java_toolchain(
     name = "java17_toolchain",
     source_version = "17",
@@ -12,7 +10,7 @@ java_binary(
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
     main_class = "com.virtualpairprogrammers.api.FleetmanApiGateway",
     deps = [":fleetman_lib"],
-    toolchain = [":java17_toolchain"]
+    toolchains = [":java17_toolchain"],  # Corrected attribute
 )
 
 java_library(
@@ -24,7 +22,7 @@ java_library(
         "@maven//:javax_xml_bind_jaxb_api",
     ],
     resources = glob(["src/main/resources/**"]),
-    toolchain = [":java17_toolchain"]
+    toolchains = [":java17_toolchain"],  # Corrected attribute
 )
 
 java_test(
