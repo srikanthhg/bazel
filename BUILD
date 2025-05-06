@@ -9,7 +9,7 @@ java_binary(
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
     main_class = "com.virtualpairprogrammers.api.FleetmanApiGateway",
     deps = [":fleetman_lib"],
-    toolchains = ":fleetman_api_gateway_toolchain",
+    toolchains = [":fleetman_api_gateway_toolchain"],
 )
 
 java_library(
@@ -21,7 +21,7 @@ java_library(
         "@maven//:javax_xml_bind_jaxb_api",
     ],
     resources = glob(["src/main/resources/**"]),
-    toolchains = ":fleetman_api_gateway_toolchain",
+    toolchains = [":fleetman_api_gateway_toolchain"],
 )
 
 java_test(
