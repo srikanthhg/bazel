@@ -13,6 +13,7 @@ java_library(
         "@maven//:org_springframework_cloud_spring_cloud_starter_openfeign",
         "@maven//:javax_xml_bind_jaxb_api",
         "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
         "@maven//:org_slf4j_slf4j_api",
         "@maven//:org_slf4j_slf4j_simple",
         "@maven//:org_springframework_spring_web",

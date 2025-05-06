@@ -16,6 +16,7 @@ maven.install(
         "org.springframework.boot:spring-boot-starter-test:3.0.1",
         "junit:junit:4.13.2",
         "com.fasterxml.jackson.core:jackson-databind:2.14.0",  # Jackson for JSON handling
+        "com.fasterxml.jackson.core:jackson-annotations:2.14.0",
         "org.slf4j:slf4j-api:2.0.0",
         "org.slf4j:slf4j-simple:2.0.0",
         "org.springframework:spring-web:5.3.20",  # Spring Web for annotations like @GetMapping
