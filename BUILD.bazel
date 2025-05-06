@@ -12,6 +12,9 @@ java_library(
         "@maven//:org_springframework_boot_spring_boot_starter_web",
         "@maven//:org_springframework_cloud_spring_cloud_starter_openfeign",
         "@maven//:javax_xml_bind_jaxb_api",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:org_slf4j_slf4j_api",
+        "@maven//:org_slf4j_slf4j_simple",
     ],
     resources = glob(["src/main/resources/**"])
 )

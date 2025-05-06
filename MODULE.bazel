@@ -15,6 +15,9 @@ maven.install(
         "javax.xml.bind:jaxb-api:2.0",
         "org.springframework.boot:spring-boot-starter-test:3.0.1",
         "junit:junit:4.13.2",
+        "com.fasterxml.jackson.core:jackson-databind:2.14.0",  # Jackson for JSON handling
+        "org.slf4j:slf4j-api:2.0.0",  # SLF4J for logging
+        "org.slf4j:slf4j-simple:2.0.0",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
