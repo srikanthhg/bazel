@@ -1,0 +1,3 @@
+build --java_toolchain=@bazel_tools//tools/jdk:toolchain_java17
+build --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_java17
+build --javabase=@bazel_tools//tools/jdk:remote_jdk17
