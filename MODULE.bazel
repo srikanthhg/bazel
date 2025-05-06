@@ -5,7 +5,14 @@ module(
 )
 
 
-bazel_dep(name = "rules_java", version = "7.6.0")  # version known to work
+bazel_dep(name = "rules_java", version = "5.0")  # version known to work
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "rules_java",
+    url = "https://github.com/bazelbuild/rules_java/releases/download/5.0.0/rules_java-5.0.0.tar.gz",
+    sha256 = "d25e4f23b824345625d38f3939f0eb2c77edb6e3c72f364e98c601e6d7ec5b4c",
+)
 
 
 # Register JDK 17 toolchain
