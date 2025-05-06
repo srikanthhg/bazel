@@ -7,4 +7,9 @@
 # build --tool_java_runtime_version=remotejdk_17
 # build --tool_java_language_version=17
 
+build:java21 --java_language_version=21
+build:java21 --java_runtime_version=local_jdk_21
+build:java21 --java_language_version=21
+build:java21 --java_runtime_version=remotejdk_21
+
 common --enable_bzlmod
