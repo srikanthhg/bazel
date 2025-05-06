@@ -7,4 +7,4 @@
 # build --tool_java_runtime_version=remotejdk_17
 # build --tool_java_language_version=17
 
-common --experimental_enable_bzlmod
+common --enable_bzlmod
