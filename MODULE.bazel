@@ -8,7 +8,7 @@ module(
 bazel_dep(name = "rules_jvm_external", version = "5.3")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
-maven.install(
+maven_fleetman.install(
     artifacts = [
         "org.springframework.boot:spring-boot-starter-web:3.0.1",
         "org.springframework.cloud:spring-cloud-starter-openfeign:2022.0.0",
@@ -24,4 +24,4 @@ maven.install(
 
 
 
-use_repo(maven, "maven")
+use_repo(maven_fleetman, "maven_fleetman")
