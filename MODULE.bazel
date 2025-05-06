@@ -23,19 +23,12 @@ maven.install(
         "org.slf4j:slf4j-simple:2.0.0",  # SLF4J Simple
         "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test
         "junit:junit:4.13.2",  # JUnit
+        "org.springframework.cloud:spring-cloud-dependencies:2022.0.4@pom",  # Spring Cloud BOM
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
     strict_visibility = True,
-)
-
-# Add the Spring Cloud BOM for dependency alignment
-maven.artifact(
-    group = "org.springframework.cloud",
-    artifact = "spring-cloud-dependencies",
-    version = "2022.0.4",
-    extension = "pom",
 )
 
 use_repo(maven, "maven")
