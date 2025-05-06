@@ -1,7 +1,6 @@
 module(
     name = "fleetman-api-gateway",
     version = "0.0.1",
-
 )
 
 # Add rules_jvm_external for managing Maven dependencies
@@ -10,25 +9,26 @@ bazel_dep(name = "rules_jvm_external", version = "6.3")
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "org.springframework.boot:spring-boot-starter-web:3.0.1",
-        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",
-        "javax.xml.bind:jaxb-api:2.0",
-        "org.springframework.boot:spring-boot-starter-test:3.0.1",
-        "junit:junit:4.13.2",
-        "com.fasterxml.jackson.core:jackson-databind:2.14.0",  # Jackson for JSON handling
-        "com.fasterxml.jackson.core:jackson-annotations:2.14.0",
-        "org.slf4j:slf4j-api:2.0.0",
-        "org.slf4j:slf4j-simple:2.0.0",
-        "org.springframework:spring-web:5.3.20",  # Spring Web for annotations like @GetMapping
-        "org.springframework:spring-context:5.3.20",  # Spring Context for @Autowired
-        "org.springframework:spring-beans:5.3.20",
+        "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
+        "org.springframework.boot:spring-boot-starter:3.0.1",  # Spring Boot Starter
+        "org.springframework.boot:spring-boot-autoconfigure:3.0.1",  # Spring Boot Autoconfigure
+        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",  # OpenFeign
+        "org.springframework.cloud:spring-cloud-starter:3.0.1",  # Spring Cloud Starter
+        "javax.xml.bind:jaxb-api:2.0",  # JAXB API
+        "org.springframework:spring-context:5.3.20",  # Spring Context
+        "org.springframework:spring-beans:5.3.20",  # Spring Beans
+        "org.springframework:spring-web:5.3.20",  # Spring Web
+        "com.fasterxml.jackson.core:jackson-databind:2.14.0",  # Jackson Databind
+        "com.fasterxml.jackson.core:jackson-annotations:2.14.0",  # Jackson Annotations
+        "org.slf4j:slf4j-api:2.0.0",  # SLF4J API
+        "org.slf4j:slf4j-simple:2.0.0",  # SLF4J Simple
+        "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test
+        "junit:junit:4.13.2",  # JUnit
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
     strict_visibility = True,
 )
-
-
 
 use_repo(maven, "maven")
