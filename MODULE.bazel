@@ -22,4 +22,11 @@ maven.install(
     strict_visibility = True,
 )
 
+java_toolchain(
+    name = "java_toolchain",
+    source_version = "17",
+    target_version = "17",
+)
+
+
 use_repo(maven, "maven")
