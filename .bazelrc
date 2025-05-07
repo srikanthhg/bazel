@@ -17,4 +17,7 @@ build --java_runtime_version=local_jdk
 build --tool_java_language_version=17
 build --tool_java_runtime_version=local_jdk
 
+build --java_toolchain=@bazel_tools//tools/jdk:remotejdk17_linux
+
+
 common --enable_bzlmod

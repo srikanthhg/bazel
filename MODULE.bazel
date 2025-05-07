@@ -4,36 +4,33 @@ module(
     compatibility_level = 1,
 )
 
+# Java rules
+bazel_dep(name = "rules_java", version = "6.0.0")
 
-bazel_dep(name = "rules_java", version = "5.5.0")  # version known to work
-
-# Register JDK 17 toolchain
+# Register the extension
 java = use_extension("@rules_java//java:extensions.bzl", "java")
+
 java.register_toolchains(
-    name = "remotejdk17",
+    name = "jdk17_toolchain",
+    java_runtime = "@bazel_tools//tools/jdk:remotejdk17_linux",
     java_version = "17",
 )
-use_repo(java, "remotejdk17")
 
+use_repo(java, "jdk17_toolchain")
 
-
-
-
-# Add rules_jvm_external for managing Maven dependencies
+# JVM external for Maven dependencies
 bazel_dep(name = "rules_jvm_external", version = "6.3")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "org.springframework.boot:spring-boot-starter-web:3.0.1",  # Spring Boot Web
-        "org.springframework.boot:spring-boot-starter-test:3.0.1",  # Spring Boot Test (test scope)
-        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",  # OpenFeign (aligned with Spring Boot 3.0.1)
-        "javax.xml.bind:jaxb-api:2.3.1",  # JAXB API
-        "junit:junit:4.11",  # JUnit (test scope)
+        "org.springframework.boot:spring-boot-starter-web:3.0.1",
+        "org.springframework.boot:spring-boot-starter-test:3.0.1",
+        "org.springframework.cloud:spring-cloud-starter-openfeign:3.0.1",
+        "javax.xml.bind:jaxb-api:2.3.1",
+        "junit:junit:4.11",
     ],
-    repositories = [
-        "https://repo1.maven.org/maven2",
-    ],
+    repositories = ["https://repo1.maven.org/maven2"],
     strict_visibility = True,
 )
 

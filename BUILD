@@ -1,11 +1,3 @@
-# default_java_toolchain(
-#     name = "toolchain_jdk_17",
-#     configuration = dict(),
-#     java_runtime = "@bazel_tools//tools/jdk:remotejdk_17",
-#     source_version = "17",
-#     target_version = "17",
-# )
-
 java_binary(
     name = "fleetman-api-gateway",
     srcs = ["src/main/java/com/virtualpairprogrammers/api/FleetmanApiGateway.java"],
